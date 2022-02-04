@@ -22,6 +22,7 @@ st.write('Can the AI spot elements like CITY  names in any sentance? Try using t
 st.write('Can the AI spot CHEMICAL Names, Diseases Names in any sentance?  Try using the 3rd model ') 
 
 st.header('To try out, Enter any text below and presss Control + Enter on keyboard') 
+st.header('Also try out different AI brains. One of models can spot Diseases names! Select a brain on the drop down on left side of this screen.') 
 
 
 
@@ -37,7 +38,7 @@ def get_default_text(nlp):
 spacy_streamlit.visualize(
     MODELS,
     default_model=DEFAULT_MODEL,
-    visualizers=[ "ner", "parser", "similarity", "tokens"],
+    visualizers=[ "ner"],
     show_visualizer_select=True,
     sidebar_description=DESCRIPTION,
     get_default_text=get_default_text
