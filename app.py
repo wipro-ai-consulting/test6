@@ -29,4 +29,7 @@ tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
 sequence = "I've been waiting for a HuggingFace course my whole life."
 
-model_inputs = tokenizer(sequence)
+model_inputs = tokenizer(sequence, return_tensors="tf")
+
+st.write(model_inputs["input_ids"])
+
