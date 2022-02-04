@@ -5,6 +5,11 @@ import importlib
 import random
 import streamlit as st
 
+import spacy
+import en_core_sci_sm
+import en_ner_bc5cdr_md
+import en_ner_craft_md
+
 MODELS = srsly.read_json(Path(__file__).parent / "models.json")
 DEFAULT_MODEL = "en_core_web_sm"
 DEFAULT_TEXT = "David Bowie moved to the US in 1974, initially staying in New York City before settling in Los Angeles."
