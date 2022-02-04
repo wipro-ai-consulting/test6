@@ -19,4 +19,11 @@ result = classifier("I hate you")[0]
 st.write(result['label'])
 
 
+question_answerer = pipeline("question-answering")
+
+context = r""" Extractive Question Answering is the task of extracting an answer from a text given a question. """
+
+result = question_answerer(question="What is extractive question answering?", context=context)
+st.write(result['answer'])
+
  
