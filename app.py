@@ -14,9 +14,9 @@ st.write('Can the AI spot CHEMICAL Names, Diseases Names in any sentance?  Try u
 st.header('To try out, Enter any text below and presss Control + Enter on keyboard') 
 st.header('Also try out different AI brains. One of models can spot Diseases names! Select a brain on the drop down on left side of this screen.') 
 
-context = st.text_area('Extractive Question Answering is the task of extracting an answer from a text given a question')
+context = st.text_area(label='context' , value ='Extractive Question Answering is the task of extracting an answer from a text given a question')
  
-myquestion = st.text_area('What is extractive question answering?')
+myquestion = st.text_area(label='question', value='What is extractive question answering?')
  
 
 question_answerer = pipeline("question-answering")
