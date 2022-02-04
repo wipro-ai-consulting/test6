@@ -16,7 +16,7 @@ classifier = pipeline("sentiment-analysis")
 
 result = classifier("I hate you")[0]
 
- st.write(result['label'])
+st.write(result['label'])
 
 
  
