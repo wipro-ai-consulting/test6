@@ -1,6 +1,6 @@
 {
   "en_core_web_sm":"English (en_core_web_sm)",
   "en_core_sci_sm":"English (en_core_sci_sm)",
-  "en_ner_bc5cdr_md": "English (en_ner_bc5cdr_md)"
+  "en_ner_bc5cdr_md": "English (en_ner_bc5cdr_md)",
   "en_ner_craft_md" : "English (en_ner_craft_md)"
 }
