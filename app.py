@@ -16,8 +16,11 @@ DEFAULT_TEXT = "David Bowie moved to the US in 1974, initially staying in New Yo
 DESCRIPTION = """**Explore trained [spaCy v3.0](https://nightly.spacy.io) pipelines**"""
 
  
-
+st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/240px-Wipro_Primary_Logo_Color_RGB.svg.png')
 st.write('Nandri jES')
+st.title('Medical Affairs Use case: Can AI understand the concepts in medical data? ')
+st.header('Can the AI spot elements like CITY names, GENE Names, Diseases Names in any sentance? ')
+
 
 
 def get_default_text(nlp):
