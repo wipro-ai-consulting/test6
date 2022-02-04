@@ -9,6 +9,12 @@ DEFAULT_MODEL = "en_core_web_sm"
 DEFAULT_TEXT = "David Bowie moved to the US in 1974, initially staying in New York City before settling in Los Angeles."
 DESCRIPTION = """**Explore trained [spaCy v3.0](https://nightly.spacy.io) pipelines**"""
 
+st.write(1234)
+
+
+st.write('Nandri jES')
+
+
 def get_default_text(nlp):
     # Check if spaCy has built-in example texts for the language
     try:
