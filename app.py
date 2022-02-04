@@ -12,7 +12,7 @@ st.header('To try out, Enter any text below and presss Control + Enter on keyboa
 st.header('Also try out different AI brains. One of models can spot Diseases names! Select a brain on the drop down on left side of this screen.') 
 
 
-classifier = pipeline("sentiment-analysis")
+classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased")
 
 result = classifier("I hate you")[0]
 
