@@ -12,12 +12,11 @@ st.header('To try out, Enter any text below and presss Control + Enter on keyboa
 st.header('Also try out different AI brains. One of models can spot Diseases names! Select a brain on the drop down on left side of this screen.') 
 
 
+classifier = pipeline("sentiment-analysis")
+
+result = classifier("I hate you")[0]
+
+ st.write(result['label'])
 
 
-unmasker2 = pipeline("fill-mask", model="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract")
-fillinsentance = "adjuvant Vaccines induce [MASK] response"
-
-resultsfillmask = unmasker(fillinsentance, top_k=4)
-
-for i in range(len(resultsfillmask)):
-    st.header (resultsfillmask[i]['sequence'])
+ 
