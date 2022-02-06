@@ -4,21 +4,37 @@ import streamlit as st
 
 from transformers import AutoTokenizer
 from transformers import BigBirdPegasusForConditionalGeneration, AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("mrm8488/GPT-2-finetuned-covid-bio-medrxiv")
+
+model = AutoModelForCausalLM.from_pretrained("mrm8488/GPT-2-finetuned-covid-bio-medrxiv")
+
+prompt = "Today the weather is really nice and I am planning on "
+inputs = tokenizer( prompt, add_special_tokens=False, return_tensors="pt")["input_ids"]
+
+prompt_length = len(tokenizer.decode(inputs[0]))
+outputs = model.generate(inputs, max_length=250, do_sample=True, top_p=0.95, top_k=60)
+generated = prompt + tokenizer.decode(outputs[0])[prompt_length + 1 :]
+
+st.write(generated)
 
  
 st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/240px-Wipro_Primary_Logo_Color_RGB.svg.png')
-st.title('Medical Affairs Use case: Can AI understand special words used by doctors? ')
-st.write('Can the AI spot elements like CITY  names in any sentance? Try using the 1st model in the dropdown list in the leftside') 
-st.write('Can the AI spot CHEMICAL Names, Diseases Names in any sentance?  Try using the 3rd model ') 
+st.title('Medical Affairs Use case: Training ecosystem of Healthcare profressionals in a fun interactive e-learning ')
 
-st.header('To try out, Enter any text below and presss Control + Enter on keyboard') 
-st.header('Also try out different AI brains. One of models can spot Diseases names! Select a brain on the drop down on left side of this screen.') 
+st.header('Hi, Healthcare professional, Lets fight COVID together.  Experts say there are still learning about coronavirus, given its its fast mutataions")
+          
+
+
 
 context = st.text_area(label='context' , value ='Extractive Question Answering is the task of extracting an answer from a text given a question')
  
 myquestion = st.text_area(label='question', value='What is extractive question answering?')
  
 
+
+          
 question_answerer = pipeline("question-answering")
 
 
