@@ -14,7 +14,7 @@ prompt = "Today the weather is really nice and I am planning on "
 inputs = tokenizer( prompt, add_special_tokens=False, return_tensors="pt")["input_ids"]
 
 prompt_length = len(tokenizer.decode(inputs[0]))
-outputs = model.generate(inputs, max_length=250, do_sample=True, top_p=0.95, top_k=60)
+outputs = model.generate(inputs, max_length=100, do_sample=True, top_p=0.95, top_k=60)
 generated = prompt + tokenizer.decode(outputs[0])[prompt_length + 1 :]
 
 st.write(generated)
@@ -35,12 +35,6 @@ myquestion = st.text_area(label='question', value='What is extractive question a
 
 
  
-unmasker2 = pipeline("fill-mask", model="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract")
-resultsfillmask = unmasker2(myquestion, top_k=4)
-st.write(resultsfillmask[0]['sequence'])
-st.write(resultsfillmask[1]['sequence'])
-st.write(resultsfillmask[2]['sequence'])
-
 
 
           
