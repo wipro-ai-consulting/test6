@@ -23,7 +23,7 @@ st.write(generated)
 st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/240px-Wipro_Primary_Logo_Color_RGB.svg.png')
 st.title('Medical Affairs Use case: Training ecosystem of Healthcare profressionals in a fun interactive e-learning ')
 
-st.header('Hi, Healthcare professional, Lets fight COVID together.  Experts say there are still learning about coronavirus, given its its fast mutataions")
+st.header('Hi, Healthcare professional, Lets fight COVID together.  Experts say there are still learning about coronavirus, given its its fast mutataions')
           
 
 
