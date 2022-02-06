@@ -21,7 +21,7 @@ st.write(generated)
 
  
 st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/240px-Wipro_Primary_Logo_Color_RGB.svg.png')
-st.title('Medical Affairs Use case: Training ecosystem of Healthcare profressionals in a fun interactive e-learning ')
+st.title('Medical Affairs Use case: Strengthen GSK ecosystem of Healthcare profressionals with a fun interactive e-learning , powered by AI')
 
 st.header('Hi, Healthcare professional, Lets fight COVID together.  Experts say there are still learning about coronavirus, given its its fast mutataions')
           
@@ -32,6 +32,15 @@ context = st.text_area(label='context' , value ='Extractive Question Answering i
  
 myquestion = st.text_area(label='question', value='What is extractive question answering?')
  
+
+
+ 
+unmasker2 = pipeline("fill-mask", model="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract")
+resultsfillmask = unmasker2(myquestion, top_k=4)
+st.write(resultsfillmask[0]['sequence'])
+st.write(resultsfillmask[1]['sequence'])
+st.write(resultsfillmask[2]['sequence'])
+
 
 
           
