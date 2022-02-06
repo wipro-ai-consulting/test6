@@ -6,6 +6,19 @@ from transformers import AutoTokenizer
 from transformers import BigBirdPegasusForConditionalGeneration, AutoTokenizer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+
+myquestion = st.text_area(label='question', value='What is extractive question answering?')
+ 
+
+
+unmasker2 = pipeline("fill-mask", model="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract")
+resultsfillmask = unmasker2(myquestion, top_k=4)
+st.write(resultsfillmask[0]['sequence'])
+st.write(resultsfillmask[1]['sequence'])
+st.write(resultsfillmask[2]['sequence'])
+
+
+
 tokenizer = AutoTokenizer.from_pretrained("mrm8488/GPT-2-finetuned-covid-bio-medrxiv")
 
 model = AutoModelForCausalLM.from_pretrained("mrm8488/GPT-2-finetuned-covid-bio-medrxiv")
@@ -30,11 +43,8 @@ st.header('Hi, Healthcare professional, Lets fight COVID together.  Experts say 
 
 context = st.text_area(label='context' , value ='Extractive Question Answering is the task of extracting an answer from a text given a question')
  
-myquestion = st.text_area(label='question', value='What is extractive question answering?')
- 
 
 
- 
 
 
           
