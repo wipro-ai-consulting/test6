@@ -7,7 +7,7 @@ from transformers import BigBirdPegasusForConditionalGeneration, AutoTokenizer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-myquestion = st.text_area(label='question', value='What is extractive question answering?')
+myquestion = st.text_area(label='question', value='vacciness indduce [MASK] response')
  
 
 
